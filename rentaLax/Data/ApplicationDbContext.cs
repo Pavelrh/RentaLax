@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using rentaLax.Models;
 
 namespace rentaLax.Data
 {
@@ -9,5 +10,7 @@ namespace rentaLax.Data
             : base(options)
         {
         }
+        public DbSet<rentaLax.Models.Item> Items { get; set; } = default!;
+        public DbSet<ItemType> ItemTypes { get; set; }
     }
 }
