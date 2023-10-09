@@ -48,7 +48,7 @@ namespace rentaLax.Controllers
         // GET: Items/Create
         public IActionResult Create()
         {
-            ViewData["ItemTypeId"] = new SelectList(_context.ItemTypes, "ItemTypeId", "ItemTypeId");
+            ViewData["ItemTypeId"] = new SelectList(_context.ItemTypes.OrderBy(c => c.Name), "ItemTypeId", "Name");
             return View();
         }
 
@@ -82,7 +82,7 @@ namespace rentaLax.Controllers
             {
                 return NotFound();
             }
-            ViewData["ItemTypeId"] = new SelectList(_context.ItemTypes, "ItemTypeId", "ItemTypeId", item.ItemTypeId);
+            ViewData["ItemTypeId"] = new SelectList(_context.ItemTypes.OrderBy(c => c.Name), "ItemTypeId", "Name", item.ItemTypeId);
             return View(item);
         }
 

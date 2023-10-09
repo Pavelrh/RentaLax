@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
 html {
   font-size: 14px;
+  
 }
+
 
 @media (min-width: 768px) {
   html {
@@ -9,7 +13,7 @@ html {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
@@ -18,5 +22,23 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    color: #7DF9FF;
+    font-family: 'Rubik', sans-serif;
+    background-color: black;
 }
+
+.btn-primary {
+    background-color: #7DF9FF;
+    color: black;
+}
+
+.navbar {
+    background-color: #7DF9FF;
+    color: black;
+}
+
+tr {
+    color: #7DF9FF;
+}
+
