@@ -7,6 +7,7 @@ namespace rentaLax.Models
         public int ItemId { get; set; }
         public string Name { get; set; }
         public decimal PricePerHour { get; set; }
+        public decimal Price { get; set; }
         public string ContactEmail { get; set; }
         public string Location { get; set; }
         public string Conditions { get; set; }
