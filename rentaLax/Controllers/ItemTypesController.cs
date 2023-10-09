@@ -56,7 +56,7 @@ namespace rentaLax.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ItemTypeId,Name")] ItemType itemType)
+        public async Task<IActionResult> Create([Bind("ItemTypeId,Name,PriceType,Abbreviation")] ItemType itemType)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace rentaLax.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ItemTypeId,Name")] ItemType itemType)
+        public async Task<IActionResult> Edit(int id, [Bind("ItemTypeId,Name,PriceType,Abbreviation")] ItemType itemType)
         {
             if (id != itemType.ItemTypeId)
             {
