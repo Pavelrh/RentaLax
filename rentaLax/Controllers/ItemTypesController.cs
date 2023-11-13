@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,16 +11,20 @@ using rentaLax.Models;
 
 namespace rentaLax.Controllers
 {
+    [Authorize]
     public class ItemTypesController : Controller
     {
+        
         private readonly ApplicationDbContext _context;
 
+       
         public ItemTypesController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         // GET: ItemTypes
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
               return _context.ItemTypes != null ? 
@@ -28,6 +33,7 @@ namespace rentaLax.Controllers
         }
 
         // GET: ItemTypes/Details/5
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.ItemTypes == null)
