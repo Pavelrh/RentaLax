@@ -6,9 +6,13 @@
 
 <h1>Rentables</h1>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
-</p>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+}
+
 <table class="table">
     <thead>
         <tr>
@@ -60,12 +64,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ItemType.Name)
             </td>
-            <td>
-                    <a asp-action="Edit" asp-route-id="@item.ItemId"><button class="btn btn-primary">Edit</button></a> 
-                    <a asp-action="Delete" asp-route-id="@item.ItemId"><button class="btn btn-danger">Delete</button></a> 
-                    <a asp-action="Details" asp-route-id="@item.ItemId"><button class="btn btn-primary">Details</button></a>
+            
+                @if(User.Identity.IsAuthenticated)
+                {
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ItemId"><button class="btn btn-primary">Edit</button></a>
+                            <a asp-action="Delete" asp-route-id="@item.ItemId"><button class="btn btn-danger">Delete</button></a>
+                            <a asp-action="Details" asp-route-id="@item.ItemId"><button class="btn btn-primary">Details</button></a>
+                        </td>
+                }
+             
                     
-            </td>
+            
         </tr>
 }
     </tbody>
