@@ -129,17 +129,17 @@ namespace rentaLax.Controllers
         {
             if (id == null || _context.ItemTypes == null)
             {
-                return NotFound();
+                return View("Error"); //NotFound();
             }
 
             var itemType = await _context.ItemTypes
                 .FirstOrDefaultAsync(m => m.ItemTypeId == id);
             if (itemType == null)
             {
-                return NotFound();
+                return View("Error");
             }
 
-            return View(itemType);
+            return View("Delete", itemType);
         }
 
         // POST: ItemTypes/Delete/5
@@ -149,7 +149,7 @@ namespace rentaLax.Controllers
         {
             if (_context.ItemTypes == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.ItemTypes'  is null.");
+                return View("Error");//Problem("Entity set 'ApplicationDbContext.ItemTypes'  is null.");
             }
             var itemType = await _context.ItemTypes.FindAsync(id);
             if (itemType != null)
