@@ -1,3 +1,5 @@
+<h1>RentaLax</h1>
+
 Purpose:
 The purpose of this site is to improve the rental experience for customers. Users can add the items they own for rent, such as a phone or a bicycle, which you can't typically rent on traditional rental sites.
 
